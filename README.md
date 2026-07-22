@@ -18,5 +18,6 @@ command: `` omarchy-theme-install https://github.com/signaldirective/cyberphunk 
 
   
 
-**Theme by [Signal Directive](https://ko-fi.com/signaldirective)**
+**Theme by [Signal Directive](https://ko-fi.com/signaldirective)**  
+
 **Additional Credits:** HANCORE for quickshell theme
