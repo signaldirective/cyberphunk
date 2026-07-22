@@ -1,0 +1,7 @@
+# XFCE Notifications
+style "xfce-notify" {
+  bg[NORMAL] = @tooltip_bg_color
+  fg[NORMAL] = @tooltip_fg_color
+}
+
+widget_class "*XfceNotification*" style "xfce-notify"

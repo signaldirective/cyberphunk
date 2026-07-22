@@ -1,0 +1,149 @@
+/* Custom Settings */
+.text-button {
+  margin-left: 3px;
+  margin-right: 3px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.text-button:checked {
+  background: #262d36;
+  border-radius: 6px;
+}
+
+.text-button:hover {
+  color: #2be3fc;
+  transition: 0.3s;
+}
+
+.image-button {
+  color: #2be3fc;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 1px;
+  padding-right: 1px;
+  transition: 0.3s;
+  border-radius: 99px;
+}
+
+.image-button:hover {
+  background: #262d36;
+  transition: 0.3s;
+}
+
+.image-button:checked {
+  color: #b3b7bd;
+  background: #262d36;
+}
+
+.image-button:disabled {
+  color: #61656b;
+}
+
+.titlebar {
+  min-height: 48px;
+  box-shadow: none;
+}
+
+/**********
+ * Thunar *
+ **********/
+.thunar #location-toolbar {
+  border-bottom: 1px solid transparent;
+}
+
+.thunar toolbar > toolitem entry {
+  background-color: #15191f;
+}
+
+.thunar .frame.standard-view {
+  border-style: none;
+}
+
+.thunar .frame.standard-view .view:not(.rubberband) {
+  background-color: transparent;
+}
+
+.thunar .frame.standard-view .view *:not(.rubberband):not(:selected) {
+  background-color: transparent;
+}
+
+.thunar .frame.standard-view iconview:selected,
+.thunar .frame.standard-view .view:selected,
+.thunar .frame.standard-view iconview.view:selected,
+.thunar .frame.standard-view .view *:selected,
+.thunar .frame.standard-view iconview *:selected,
+.thunar .frame.standard-view iconview cell:selected,
+.thunar .frame.standard-view .view cell:selected,
+.thunar .standard-view iconview:selected,
+.thunar .standard-view .view:selected,
+.thunar .standard-view iconview.view:selected,
+.thunar .standard-view .view *:selected,
+.thunar iconview:selected,
+.thunar .view:selected,
+.thunar :selected,
+.thunar ExoIconView:selected,
+.thunar .standard-view ExoIconView:selected,
+.thunar .frame.standard-view ExoIconView:selected,
+.thunar widget:selected,
+.thunar .standard-view widget:selected,
+.thunar .frame.standard-view widget:selected,
+.thunar cell:selected,
+.thunar .standard-view cell:selected,
+.thunar .frame.standard-view cell:selected {
+  background: #2be3fc !important;
+  background-color: #2be3fc !important;
+  color: #15191f !important;
+  border-radius: 8px;
+}
+
+.thunar .frame.standard-view .view *:selected,
+.thunar .frame.standard-view iconview *:selected,
+.thunar .standard-view .view *:selected,
+.thunar iconview *:selected,
+.thunar ExoIconView *:selected,
+.thunar .standard-view ExoIconView *:selected,
+.thunar .frame.standard-view ExoIconView *:selected,
+.thunar cell *:selected,
+.thunar .standard-view cell *:selected,
+.thunar .frame.standard-view cell *:selected {
+  color: #15191f !important;
+  background: #2be3fc !important;
+}
+
+.thunar .sidebar {
+  background-image: url("../gtk-assets/thunar-sidebar.png");
+  border: none;
+}
+
+.thunar .sidebar .view:not(:selected) {
+  background-color: transparent;
+}
+
+.thunar .sidebar .view:selected {
+  background-color: #262d36;
+  color: #b3b7bd;
+}
+
+.thunar .sidebar .view {
+  padding: 2px 0px;
+}
+
+paned > separator {
+  min-width: 1px;
+  min-height: 1px;
+  -gtk-icon-source: none;
+  border-style: none;
+  background-color: transparent;
+  background-image: image(transparent);
+  background-size: 1px 1px;
+  background-clip: content-box;
+}
+
+.thunar statusbar {
+  margin: 0 -10px;
+  padding: 0 4px;
+  border-top: 1px solid transparent;
+}

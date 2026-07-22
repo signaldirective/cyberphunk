@@ -1,0 +1,714 @@
+@define-color background #15191f;
+@define-color foreground #b3b7bd;
+@define-color accent #2be3fc;
+@define-color cursor #2bcafc;
+@define-color selection_bg #fc72ff;
+@define-color selection_fg #ecf2f2;
+@define-color surface #262d36;
+@define-color border #2a323c;
+@define-color disabled #61656b;
+@define-color warn #F865A5;
+@define-color success #29edbe;
+@define-color error #F865A5;
+@define-color link_color #2be3fc;
+@define-color visited_link_color #af54ff;
+
+* {
+  background-color: @background;
+  color: @foreground;
+  border-color: @border;
+  -gtk-secondary-caret-color: @accent;
+}
+
+.background {
+  background-color: @background;
+  color: @foreground;
+}
+
+.background:backdrop {
+  color: @disabled;
+  background-color: @background;
+}
+
+*:disabled {
+  -gtk-icon-effect: dim;
+}
+
+label {
+  color: @foreground;
+}
+
+label:disabled {
+  color: @disabled;
+}
+
+label:backdrop {
+  color: @disabled;
+}
+
+label selection {
+  background-color: alpha(@selection_bg, 0.3);
+}
+
+.view,
+iconview,
+textview text {
+  color: @foreground;
+  background-color: @background;
+}
+
+.view:backdrop,
+iconview:backdrop,
+textview text:backdrop {
+  color: @disabled;
+  background-color: @background;
+}
+
+.view:disabled,
+iconview:disabled,
+textview text:disabled {
+  color: @disabled;
+  background-color: @background;
+}
+
+.view:selected,
+iconview:selected,
+textview text:selected {
+  border-radius: 3px;
+}
+
+textview text selection {
+  background-color: alpha(@selection_bg, 0.3);
+}
+
+rubberband {
+  border: 1px solid @accent;
+  background-color: alpha(@accent, 0.2);
+}
+
+flowbox child {
+  padding: 3px;
+}
+
+flowbox child:selected {
+  background-color: @accent;
+  color: @background;
+}
+
+button {
+  min-height: 24px;
+  min-width: 16px;
+  padding: 2px 8px;
+  border: 1px solid @border;
+  border-radius: 3px;
+  background-color: @surface;
+  color: @foreground;
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+button:hover {
+  border-color: @accent;
+  background-color: shade(@surface, 1.2);
+}
+
+button:active,
+button:checked {
+  border-color: @accent;
+  background-color: @accent;
+  color: @background;
+}
+
+button:disabled {
+  color: @disabled;
+  background-color: @background;
+}
+
+button.flat {
+  background-color: transparent;
+  border: none;
+}
+
+button.flat:hover {
+  background-color: @surface;
+}
+
+button.suggested-action {
+  background-color: @accent;
+  color: @background;
+  border-color: @accent;
+}
+
+button.suggested-action:hover {
+  background-color: lighten(@accent, 0.8);
+}
+
+button.destructive-action {
+  background-color: @error;
+  color: @background;
+  border-color: @error;
+}
+
+button.destructive-action:hover {
+  background-color: shade(@error, 1.1);
+}
+
+entry {
+  min-height: 32px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  color: @foreground;
+  background-color: @surface;
+  caret-color: @cursor;
+}
+
+entry:focus {
+  border-color: @accent;
+  background-color: shade(@surface, 1.1);
+}
+
+entry:disabled {
+  color: @disabled;
+  background-color: transparent;
+}
+
+entry selection {
+  background-color: alpha(@selection_bg, 0.3);
+}
+
+textview {
+  background-color: @surface;
+  color: @foreground;
+}
+
+textview text selection {
+  background-color: @selection_bg;
+  color: @selection_fg;
+}
+
+treeview {
+  background-color: @background;
+  color: @foreground;
+}
+
+treeview:selected {
+  background-color: @accent;
+  color: @background;
+}
+
+treeview.view {
+  border-color: @border;
+}
+
+scrollbar {
+  background-color: @background;
+  border: none;
+}
+
+scrollbar slider {
+  background-color: @surface;
+  border: 1px solid @border;
+  border-radius: 4px;
+  min-width: 8px;
+  min-height: 8px;
+}
+
+scrollbar slider:hover {
+  background-color: @accent;
+}
+
+scrollbar slider:active {
+  background-color: @cursor;
+}
+
+progressbar {
+  background-color: @surface;
+  border: 1px solid @border;
+  border-radius: 4px;
+  color: @foreground;
+}
+
+progressbar trough {
+  background-color: @surface;
+  border: none;
+  border-radius: 4px;
+}
+
+progressbar progress {
+  background-color: @accent;
+  border: none;
+  border-radius: 4px;
+}
+
+levelbar block {
+  background-color: @accent;
+}
+
+levelbar block.warning {
+  background-color: @warn;
+}
+
+levelbar block.error {
+  background-color: @error;
+}
+
+menubar {
+  background-color: @background;
+  color: @foreground;
+  border: none;
+}
+
+menubar > menuitem {
+  padding: 4px 8px;
+}
+
+menubar > menuitem:hover {
+  background-color: @accent;
+  color: @background;
+}
+
+menu {
+  background-color: @surface;
+  color: @foreground;
+  border: 1px solid @border;
+}
+
+menu menuitem {
+  padding: 4px 12px;
+}
+
+menu menuitem:hover {
+  background-color: @accent;
+  color: @background;
+}
+
+menu menuitem:disabled {
+  color: @disabled;
+}
+
+combobox button {
+  background-color: @surface;
+  color: @foreground;
+  border: 1px solid @border;
+}
+
+combobox button:hover {
+  border-color: @accent;
+}
+
+notebook {
+  background-color: @background;
+  border: 1px solid @border;
+}
+
+notebook header {
+  background-color: @surface;
+  border: none;
+}
+
+notebook tab {
+  background-color: @surface;
+  color: @foreground;
+  border: none;
+  padding: 4px 12px;
+}
+
+notebook tab:hover {
+  background-color: shade(@surface, 1.2);
+}
+
+notebook tab:checked {
+  background-color: @background;
+  color: @accent;
+  border-bottom: 2px solid @accent;
+}
+
+switch {
+  background-color: @surface;
+  border: 1px solid @border;
+  border-radius: 10px;
+}
+
+switch:checked {
+  background-color: @accent;
+  border-color: @accent;
+}
+
+switch slider {
+  background-color: @foreground;
+  border-radius: 8px;
+}
+
+checkbutton, radiobutton {
+  color: @foreground;
+}
+
+check, radio {
+  background-color: @surface;
+  border: 1px solid @border;
+}
+
+check:checked, radio:checked {
+  background-color: @accent;
+  border-color: @accent;
+}
+
+frame {
+  border: 1px solid @border;
+  border-radius: 4px;
+}
+
+frame > border {
+  border: none;
+}
+
+frame > label {
+  color: @foreground;
+  padding: 0 4px;
+}
+
+tooltip {
+  background-color: @surface;
+  color: @foreground;
+  border: 1px solid @border;
+  border-radius: 4px;
+}
+
+tooltip label {
+  color: @foreground;
+}
+
+statusbar {
+  background-color: @background;
+  color: @foreground;
+}
+
+scale {
+  background-color: @surface;
+}
+
+scale trough {
+  background-color: @surface;
+  border: 1px solid @border;
+  border-radius: 4px;
+}
+
+scale trough highlight {
+  background-color: @accent;
+  border-radius: 4px;
+}
+
+scale slider {
+  background-color: @accent;
+  border-radius: 8px;
+}
+
+scale slider:hover {
+  background-color: @cursor;
+}
+
+spinner {
+  color: @accent;
+}
+
+spinner:active {
+  color: @accent;
+}
+
+separator {
+  background-color: @border;
+}
+
+paned {
+  background-color: @background;
+}
+
+paned separator {
+  background-color: @border;
+}
+
+paned separator:hover {
+  background-color: @accent;
+}
+
+infobar {
+  background-color: @surface;
+  border: 1px solid @border;
+}
+
+infobar.info {
+  background-color: @accent;
+  color: @background;
+}
+
+infobar.warning {
+  background-color: shade(@warn, 0.7);
+  color: @background;
+}
+
+infobar.error {
+  background-color: @error;
+  color: @background;
+}
+
+list {
+  background-color: @background;
+  color: @foreground;
+}
+
+list row {
+  padding: 4px;
+}
+
+list row:selected {
+  background-color: @accent;
+  color: @background;
+}
+
+headerbar {
+  background-color: @background;
+  color: @foreground;
+  border: none;
+  border-bottom: 1px solid @border;
+  padding: 4px 8px;
+  min-height: 46px;
+}
+
+headerbar button {
+  background-color: @surface;
+}
+
+headerbar button:active,
+headerbar button:checked {
+  background-color: @accent;
+  color: @background;
+}
+
+headerbar entry {
+  background-color: @surface;
+}
+
+headerbar button.titlebutton {
+  background-color: transparent;
+  border: none;
+}
+
+headerbar button.titlebutton:hover {
+  background-color: @surface;
+}
+
+calendar {
+  background-color: @surface;
+  color: @foreground;
+  border: 1px solid @border;
+}
+
+calendar:selected {
+  background-color: @accent;
+  color: @background;
+}
+
+calendar.header {
+  background-color: @background;
+  color: @foreground;
+}
+
+toolbar {
+  background-color: @surface;
+  border: none;
+  border-bottom: 1px solid @border;
+  padding: 4px;
+}
+
+toolbar button {
+  background-color: transparent;
+  border: none;
+}
+
+toolbar button:hover {
+  background-color: shade(@surface, 1.2);
+}
+
+searchbar {
+  background-color: @surface;
+  border: none;
+  border-bottom: 1px solid @border;
+}
+
+dropdown {
+  background-color: @surface;
+  color: @foreground;
+  border: 1px solid @border;
+}
+
+dropdown popover {
+  background-color: @surface;
+  color: @foreground;
+}
+
+link {
+  color: @link_color;
+}
+
+link:hover {
+  color: lighten(@link_color, 0.8);
+}
+
+link:visited {
+  color: @visited_link_color;
+}
+
+spinbutton {
+  background-color: @surface;
+  color: @foreground;
+  border: 1px solid @border;
+  border-radius: 4px;
+}
+
+spinbutton:focus-within {
+  border-color: @accent;
+}
+
+iconview:selected {
+  background-color: @accent;
+  color: @background;
+}
+
+iconview text:selected {
+  background-color: @accent;
+  color: @background;
+}
+
+.view:selected {
+  background-color: @accent;
+  color: @background;
+}
+
+windowhandle {
+  background-color: @background;
+}
+
+.title {
+  color: @foreground;
+}
+
+.subtitle {
+  color: @disabled;
+}
+
+rubberband {
+  background-color: alpha(@accent, 0.3);
+  border: 1px solid @accent;
+}
+
+flowbox {
+  background-color: @background;
+}
+
+flowbox child {
+  padding: 4px;
+}
+
+flowbox child:selected {
+  background-color: @accent;
+  color: @background;
+}
+
+popover {
+  background-color: @surface;
+  color: @foreground;
+  border: 1px solid @border;
+  border-radius: 4px;
+}
+
+window {
+  background-color: @background;
+}
+
+leaflet {
+  background-color: @background;
+}
+
+stack {
+  background-color: @background;
+}
+
+overlay {
+  background-color: @background;
+}
+
+carousel {
+  background-color: @background;
+}
+
+button.pill {
+  background-color: @surface;
+  color: @foreground;
+  border-radius: 16px;
+}
+
+button.pill:checked {
+  background-color: @accent;
+  color: @background;
+}
+
+tabbar {
+  background-color: @surface;
+  border-bottom: 1px solid @border;
+}
+
+tabbar tab {
+  background-color: @surface;
+  color: @foreground;
+}
+
+tabbar tab:checked {
+  color: @accent;
+  border-bottom: 2px solid @accent;
+}
+
+navigation-split-view {
+  background-color: @background;
+}
+
+flap {
+  background-color: @background;
+}
+
+toast {
+  background-color: @surface;
+  color: @foreground;
+  border: 1px solid @border;
+  border-radius: 6px;
+}
+
+preferencespage {
+  background-color: @background;
+}
+
+preferencesgroup {
+  background-color: @surface;
+  border: 1px solid @border;
+  border-radius: 6px;
+}
+
+preferencesgroup > title {
+  color: @foreground;
+}
+
+@define-color theme_bg_color @background;
+@define-color theme_fg_color @foreground;
+@define-color theme_base_color @background;
+@define-color theme_text_color @foreground;
+@define-color theme_selected_bg_color @accent;
+@define-color theme_selected_fg_color @background;
+@define-color theme_unfocused_bg_color @background;
+@define-color theme_unfocused_fg_color @disabled;
+@define-color theme_unfocused_base_color @background;
+@define-color theme_unfocused_text_color @foreground;
+@define-color theme_unfocused_selected_bg_color @accent;
+@define-color theme_unfocused_selected_fg_color @background;
+@define-color content_view_bg @background;
+
+@import url("custom.css");

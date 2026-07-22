@@ -1,0 +1,13 @@
+# XFCE4 Panel
+style "panel" {
+  xthickness = 0
+  ythickness = 0
+
+  bg[NORMAL] = @bg_color
+  bg[PRELIGHT] = shade(1.1, @bg_color)
+}
+
+class "GtkWindow" style "panel"
+widget_class "*PanelToplevel*" style "panel"
+widget_class "*XfcePanelWindow*" style "panel"
+widget_class "*XfcePanel*" style "panel"

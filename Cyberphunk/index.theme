@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Cyberphunk
+Comment=A dark cyberpunk-themed GTK theme with neon accents
+Encoding=UTF-8
+
+[GTK 2.0]
+Modules=
+
+[GTK 3.0]
+Modules=
+
+[Desktop Entry]
+X-GNOME-Metatheme=true
